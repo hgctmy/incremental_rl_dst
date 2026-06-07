@@ -31,7 +31,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 
-SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "fullstate.txt"
+SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent.parent.parent / "prompts" / "fullstate.txt"
 
 
 def load_system_prompt() -> str:
