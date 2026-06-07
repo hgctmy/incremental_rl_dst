@@ -75,9 +75,9 @@ Download SpokenWOZ from [spokenwoz.github.io](https://spokenwoz.github.io/) and 
 
 ```
 data/raw/
-  train_v1.0.json
-  val_v1.0.json
-  test_v1.0.json
+  train.json
+  val.json
+  test.json
   audio/          # WAV files referenced by each JSON
 ```
 
@@ -87,9 +87,9 @@ user-turn audio (named `{dialogue_id}_{sys_idx}_{user_idx}.wav`) using the
 word-level timing in the JSON:
 
 ```bash
-python scripts/train/split_audio.py --data data/raw/train_v1.0.json --audio-dir data/raw/audio --output-dir data/audio/train
-python scripts/train/split_audio.py --data data/raw/val_v1.0.json   --audio-dir data/raw/audio --output-dir data/audio/val
-python scripts/train/split_audio.py --data data/raw/test_v1.0.json  --audio-dir data/raw/audio --output-dir data/audio/test
+python scripts/train/split_audio.py --data data/raw/train.json --audio-dir data/raw/audio --output-dir data/audio/train
+python scripts/train/split_audio.py --data data/raw/val.json   --audio-dir data/raw/audio --output-dir data/audio/val
+python scripts/train/split_audio.py --data data/raw/test.json  --audio-dir data/raw/audio --output-dir data/audio/test
 ```
 
 Then convert to GRPO JSONL format. Each sample carries the diff-operation target
@@ -97,9 +97,9 @@ Then convert to GRPO JSONL format. Each sample carries the diff-operation target
 plus the previous state from the current system turn:
 
 ```bash
-python scripts/train/prepare_data.py --data data/raw/train_v1.0.json --output data/train.jsonl
-python scripts/train/prepare_data.py --data data/raw/val_v1.0.json   --output data/val.jsonl
-python scripts/train/prepare_data.py --data data/raw/test_v1.0.json  --output data/test.jsonl
+python scripts/train/prepare_data.py --data data/raw/train.json --output data/train.jsonl
+python scripts/train/prepare_data.py --data data/raw/val.json   --output data/val.jsonl
+python scripts/train/prepare_data.py --data data/raw/test.json  --output data/test.jsonl
 ```
 
 Point training/inference at the split audio with `--audio-base-dir data/audio/<split>`.

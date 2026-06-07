@@ -1,6 +1,6 @@
 """Convert SpokenWOZ data to GRPO-format JSONL for incremental DST training.
 
-Expected SpokenWOZ raw format (e.g. train_v1.0.json):
+Expected SpokenWOZ raw format (e.g. train.json):
   {
     "DIALOGUE_ID": {
       "log": [
@@ -46,11 +46,11 @@ Usage:
   # 1. Split audio first (see split_audio.py)
   # 2. Then prepare JSONL:
   python scripts/train/prepare_data.py \\
-      --data      data/raw/train_v1.0.json \\
+      --data      data/raw/train.json \\
       --output    data/train.jsonl
 
   python scripts/train/prepare_data.py \\
-      --data      data/raw/test_v1.0.json \\
+      --data      data/raw/test.json \\
       --output    data/test.jsonl
 """
 

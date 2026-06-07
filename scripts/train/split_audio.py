@@ -18,12 +18,12 @@ Output structure:
 
 Usage:
   python scripts/train/split_audio.py \\
-      --data     data/raw/train_v1.0.json \\
+      --data     data/raw/train.json \\
       --audio-dir data/raw/audio \\
       --output-dir data/audio/train
 
   python scripts/train/split_audio.py \\
-      --data     data/raw/test_v1.0.json \\
+      --data     data/raw/test.json \\
       --audio-dir data/raw/audio \\
       --output-dir data/audio/test
 """
