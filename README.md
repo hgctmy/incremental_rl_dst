@@ -132,14 +132,3 @@ python scripts/eval/eval.py \
 ```
 
 Metrics: transcript WER, Joint Goal Accuracy (JGA), Slot F1.
-
-## Citation
-
-```bibtex
-@inproceedings{higuchi2026incremental,
-  title     = {Incremental End-to-End Spoken Dialogue State Tracking with a Multimodal {LLM} and Reinforcement Learning},
-  author    = {Higuchi, Tomoya},
-  booktitle = {Interspeech},
-  year      = {2026},
-}
-```
